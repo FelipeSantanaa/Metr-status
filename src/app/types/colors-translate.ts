@@ -1,0 +1,15 @@
+export const colorsTranslate = new Map<string, string>([
+  ['azul', 'blue'],
+  ['verde', 'green'],
+  ['vermelha', 'red'],
+  ['amarela', 'yellow'],
+  ['lilás', 'purple'],
+  ['rubi', 'ruby'],
+  ['diamante', 'diamond'],
+  ['esmeralda', 'emerald'],
+  ['turquesa', 'turquoise'],
+  ['coral', 'coral'],
+  ['safira', 'sapphire'],
+  ['jade', 'jade'],
+  ['prata', 'silver'],
+]);

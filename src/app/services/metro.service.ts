@@ -10,6 +10,6 @@ export class MetroService {
   constructor(private http: HttpClient) {}
 
   getMetroStatus() {
-    return this.http.get<metroResponse>(env.apiUrl);
+    return this.http.get<metroResponse[]>(env.apiUrl);
   }
 }

@@ -1,0 +1,19 @@
+@if (!loading) {
+<div class="row w-100">
+
+    <div class="card text-center">
+        <div class="d-flex ms-auto">
+            <img src="../../../assets/images/metrosp.png" class="m-2" alt="Metrô de SP">
+        </div>
+        <div class="card-title">
+            <h5 [ngClass]="['bg-' + bgColor]" class="text-white">{{data.nome}}</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">Situação: {{data.situacao}}</p>
+            <p class="card-text">Atualização: {{data.atualizacao}}</p>
+        </div>
+    </div>
+
+
+</div>
+}

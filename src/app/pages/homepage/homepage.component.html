@@ -1,1 +1,28 @@
-<p>homepage works!</p>
+<!-- @if (loading) {
+    <div class="loading-spinner">
+        Carregando...
+    </div>
+} -->
+
+<!-- @if(!loading){ -->
+<section>
+    <main class="container">
+        <div class="text-center">
+            <h1 class="fs-3 my-2 bg-green">Status - Estações de metrô de SP </h1>
+            <p class="fs-6 subtitle">Esteja sempre informado sobre alterações e incidentes nas linhas do Metrô de SP,
+                ViaMobilidade e CPTM com
+                atualizações frequentes.</p>
+        </div>
+
+
+        <!-- Cards -->
+        <div class="row">
+            @for (metroStatus of metroResponse; track $index) {
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <app-card [data]="metroStatus"></app-card>
+            </div>
+            }
+        </div>
+    </main>
+</section>
+<!-- } -->

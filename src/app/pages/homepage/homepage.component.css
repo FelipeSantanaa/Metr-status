@@ -1,0 +1,11 @@
+.subtitle {
+    max-width: 90%;
+    display: inline-flex;
+}
+
+@media(min-width: 1200px) {
+    .subtitle {
+        max-width: 45%;
+        display: inline-flex;
+    }
+}
