@@ -8,6 +8,7 @@ import {
 import { metroResponse } from '../../types/metro-response';
 import { colorsTranslate } from '../../types/colors-translate';
 import { CommonModule } from '@angular/common';
+import { linesTranslate } from '../../types/lines-translate';
 
 @Component({
   selector: 'app-card',
@@ -21,30 +22,35 @@ export class CardComponent {
   @Input() loading!: boolean;
 
   bgColor!: string;
+  lineName!: string;
 
   constructor() {}
 
   ngOnInit() {
+    this.getLineName();
     this.getLineColor();
     this.getCompanyIcon();
-    console.log(this.getCompanyIcon())
   }
 
   getLineColor() {
-    const nome = this.data.nome.split(' - ');
-    const colorName = nome[1].toLowerCase();
+    const nome = this.lineName;
+    const colorName = nome.toLowerCase();
     this.bgColor = colorsTranslate.get(colorName) || '';
+  }
+  
+  getLineName() {
+    const codigo = this.data.codigo;
+    this.lineName = linesTranslate.get(codigo.toString()) || '';
   }
 
   getCompanyIcon() {
-    const empresa = this.data.empresa;
-    switch (empresa) {
-      case 'CPTM':
-        return '../../../assets/images/cptm.png';
-      case 'ViaMobilidade':
-        return '../../../assets/images/viamobilidade.png';
-      default:
-        return '../../../assets/images/metrosp.png';
+    const empresa = this.data.codigo;
+    if (empresa === 1 || empresa === 2 || empresa === 3 || empresa === 4 || empresa === 15) {
+      return '../../../assets/images/metrosp.png';
+    } else if (empresa === 5 || empresa === 8 || empresa === 9 ) {
+      return '../../../assets/images/viamobilidade.png';
+    } else {
+      return '../../../assets/images/cptm.png';
     }
   }
 }

@@ -1,10 +1,9 @@
 export type metroResponse = {
   id: number;
-  nome: string;
-  empresa: string;
-  situacao: string;
   codigo: number;
+  criado: string;
   descricao: string;
-  ocorrencia: string;
-  atualizacao: string;
+  modificado: string;
+  situacao: string;
 };
+

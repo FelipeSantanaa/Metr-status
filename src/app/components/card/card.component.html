@@ -7,11 +7,16 @@
 
         </div>
         <div class="card-title">
-            <h5 [ngClass]="['bg-' + bgColor]" class="text-white label">{{data.nome}}</h5>
+            <h5 [ngClass]="['bg-' + bgColor]" class="text-white label">Linha {{data.codigo}} - {{lineName | titlecase}}
+            </h5>
         </div>
         <div class="card-body">
-            <p class="card-text"> <b>Situação:</b> {{data.situacao}}</p>
-            <p class="card-text"><b>Atualização:</b> {{data.atualizacao}}</p>
+            @if (data.situacao == 'Operação Normal') {
+            <p class="card-text"> <b>Situação: {{data.situacao}}</b></p>
+            } @else {
+            <p class="card-text text-danger"> <b>Situação: {{data.situacao}}</b></p>
+            }
+            <p class="card-text"><b>Atualização:</b> {{data.modificado | date:'dd/MM/yyyy HH:mm'}}</p>
             @if (data.descricao) {
             <p class="card-text"><b>Descrição:</b> {{data.descricao}}</p>
             }
