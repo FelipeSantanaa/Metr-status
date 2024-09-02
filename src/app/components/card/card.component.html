@@ -3,14 +3,18 @@
 
     <div class="card text-center">
         <div class="d-flex ms-auto">
-            <img src="../../../assets/images/metrosp.png" class="m-2" alt="Metrô de SP">
+            <img [src]="getCompanyIcon()" class="m-2" alt="Empresa responsável">
+
         </div>
         <div class="card-title">
-            <h5 [ngClass]="['bg-' + bgColor]" class="text-white">{{data.nome}}</h5>
+            <h5 [ngClass]="['bg-' + bgColor]" class="text-white label">{{data.nome}}</h5>
         </div>
         <div class="card-body">
-            <p class="card-text">Situação: {{data.situacao}}</p>
-            <p class="card-text">Atualização: {{data.atualizacao}}</p>
+            <p class="card-text"> <b>Situação:</b> {{data.situacao}}</p>
+            <p class="card-text"><b>Atualização:</b> {{data.atualizacao}}</p>
+            @if (data.descricao) {
+            <p class="card-text"><b>Descrição:</b> {{data.descricao}}</p>
+            }
         </div>
     </div>
 
