@@ -18,7 +18,7 @@
         <!-- Cards -->
         <div class="row">
             @for (metroStatus of metroResponse; track $index) {
-            <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-md-4 mb-3 d-flex d-sm-block justify-content-center">
                 <app-card [data]="metroStatus"></app-card>
             </div>
             }
