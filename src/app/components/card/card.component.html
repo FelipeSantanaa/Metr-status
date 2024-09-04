@@ -7,12 +7,12 @@
 
         </div>
         <div class="card-title">
-            <h5 [ngClass]="['bg-' + bgColor]" class="text-white label">Linha {{data.codigo}} - {{lineName | titlecase}}
+            <h5 [ngClass]="['bg-' + bgColor]" class="text-white label py-2">Linha {{data.codigo}} - {{lineName | titlecase}}
             </h5>
         </div>
         <div class="card-body">
             @if (data.situacao == 'Operação Normal') {
-            <p class="card-text"> <b>Situação: {{data.situacao}}</b></p>
+            <p class="card-text text-success"> <b>Situação: {{data.situacao}}</b></p>
             } @else {
             <p class="card-text text-danger"> <b>Situação: {{data.situacao}}</b></p>
             }

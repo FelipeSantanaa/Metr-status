@@ -37,7 +37,7 @@ export class CardComponent {
     const colorName = nome.toLowerCase();
     this.bgColor = colorsTranslate.get(colorName) || '';
   }
-  
+
   getLineName() {
     const codigo = this.data.codigo;
     this.lineName = linesTranslate.get(codigo.toString()) || '';
@@ -45,9 +45,14 @@ export class CardComponent {
 
   getCompanyIcon() {
     const empresa = this.data.codigo;
-    if (empresa === 1 || empresa === 2 || empresa === 3 || empresa === 4 || empresa === 15) {
+    const iconMap = {
+      metrosp: [1, 2, 3, 4, 15],
+      viamobilidade: [5, 8, 9],
+    };
+
+    if (iconMap.metrosp.includes(empresa)) {
       return '../../../assets/images/metrosp.png';
-    } else if (empresa === 5 || empresa === 8 || empresa === 9 ) {
+    } else if (iconMap.viamobilidade.includes(empresa)) {
       return '../../../assets/images/viamobilidade.png';
     } else {
       return '../../../assets/images/cptm.png';
