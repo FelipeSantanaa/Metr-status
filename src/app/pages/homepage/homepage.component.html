@@ -1,14 +1,14 @@
-<section>
+<section [ngClass]="{'bg-dark': !isDarkTheme}">
     <main class="container">
-        <div class="text-center py-3">
-            <h1 class="fs-3 my-2 bg-green">Status - Estações de metrô de SP </h1>
+        <div class="text-center py-3" [ngClass]="{'text-white': !isDarkTheme}">
+            <h1 class="fs-3 my-2">Status - Estações de metrô de SP </h1>
             <p class="fs-6 subtitle">Esteja sempre informado sobre alterações e incidentes nas linhas do Metrô de SP,
                 ViaMobilidade e CPTM com
                 atualizações frequentes.</p>
         </div>
 
 
-        <!-- Cards -->
+
         <div class="row">
             @for (metroStatus of metroResponse; track $index) {
             <div class="col-12 col-sm-6 col-md-4 mb-3 d-flex d-sm-block justify-content-center">
@@ -17,5 +17,24 @@
             }
         </div>
     </main>
+    <footer class="text-center pb-3">
+        <div class="container">
+            <span class="" [ngClass]="isDarkTheme ? 'text-muted' : 'text-white'">Desenvolvido por <a
+                    href="https://felipealves.dev" target="_blank" class=""
+                    [ngClass]="isDarkTheme ? 'text-muted' : 'text-white'">Felipe Alves</a></span>
+        </div>
+    </footer>
 </section>
-<!-- } -->
+
+
+<div class="darkmode" (click)="toggleDarkTheme()">
+    @if (isDarkTheme) {
+    <a href="#">
+        <img src="../../../assets/images/dark-mode.png" alt="DarkTheme" class="darkmode" />
+    </a>
+    } @else {
+    <a href="#">
+        <img src="../../../assets/images/light-mode.png" alt="LightTheme" class="darkmode" />
+    </a>
+    }
+</div>

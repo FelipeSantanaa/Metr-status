@@ -3,6 +3,29 @@
     display: inline-flex;
 }
 
+.darkmode {
+    background-color: #FFF;
+    border-radius: 35px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.darkmode img {
+    width: 60px;
+    border: 2px solid black;
+    padding: 5px;
+    transition: all 1s;
+}
+
+.darkmode img:hover {
+    transform: rotate(360deg);
+    /* border: 2px solid black; */
+    /* background-color: black; */
+}
+
+
 @media(min-width: 1200px) {
     .subtitle {
         max-width: 45%;
