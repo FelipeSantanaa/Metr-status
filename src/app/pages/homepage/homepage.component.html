@@ -2,12 +2,13 @@
     <main class="container">
         <div class="text-center py-3" [ngClass]="{'text-white': !isDarkTheme}">
             <h1 class="fs-3 my-2">Status - Estações de metrô de SP </h1>
-            <p class="fs-6 subtitle">Esteja sempre informado sobre alterações e incidentes nas linhas do Metrô de SP,
-                ViaMobilidade e CPTM com
-                atualizações frequentes.</p>
+            <p class="fs-6 subtitle">Esteja sempre informado sobre alterações e incidentes nas linhas do <a
+                    target="_blank" href="https://www.metro.sp.gov.br/">Metrô de SP</a>,
+                <a target="_blank" href="https://www.viamobilidade.com.br/">ViaMobilidade</a> e <a target="_blank"
+                    href="https://www.cptm.sp.gov.br/Pages/Home.aspx">CPTM</a> com
+                atualizações frequentes.
+            </p>
         </div>
-
-
 
         <div class="row d-flex justify-content-center">
             @for (metroStatus of metroResponse; track $index) {
@@ -25,7 +26,6 @@
         </div>
     </footer>
 </section>
-
 
 <div class="darkmode" (click)="toggleDarkTheme()">
     @if (isDarkTheme) {
