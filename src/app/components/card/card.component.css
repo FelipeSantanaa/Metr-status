@@ -74,8 +74,8 @@ img {
     background-color: #6c757d;
 }
 
-@media(max-width:525px){
+@media(max-width:480px){
     .card {
-        width: 95%;
+        width: 90%;
     }
 }
